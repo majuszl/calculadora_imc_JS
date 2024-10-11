@@ -25,21 +25,25 @@
 
                 <button class="botcal" id="botcal" type="submit">Calcular IMC</button><br><br>
 
+                <h2 class="escritaresult" id="resultado"></h2>
+
         <script>
+
             function calculareexibirIMC() {
             var inputpeso = parseFloat(document.getElementById("peso").value)
             var inputalt = parseFloat(document.getElementById("altura").value)
+            var resultado = document.getElementById('resultado')
             var imc = (inputpeso / (inputalt * inputalt))
             if (imc < 18.5) {
-                alert('Você está abaixo do peso.')
+                resultado.textContent = 'Você está abaixo do peso.'
             } 
             else if (imc >= 18.5 && imc <= 24.9) {
-                alert('Você está no peso normal.')
+                resultado.textContent = 'Você está no peso normal.'
             }
             else if (imc >= 25 && imc <= 29.9) {
-                alert('Você está em sobrepeso.')
+                resultado.textContent = 'Você está em sobrepeso.'
             } else {
-                alert('Estado de obesidade.')
+                resultado.textContent = 'Estado de obesidade.'
             }
             }
 
