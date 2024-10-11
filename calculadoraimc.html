@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <link rel="stylesheet" href="assets/css/calculadoraimc.css">
+</head>
+<body>
+    
+    <center>
+    <section class="calc">
+        <div class="butcalcula">
+            <h2 class="h2calc">Calculadora de IMC</h2>
+
+                <div class="form-control">
+                    <input class="input input-alt" placeholder="Peso (kg)" step="0.1" type="number" id="peso" name="peso">
+                    <span class="input-border input-border-alt"></span>
+                </div>
+
+                <div class="form-control">
+                    <input class="input input-alt" placeholder="Altura (m)" step="0.01" type="number" id="altura" name="altura">
+                    <span class="input-border input-border-alt"></span>
+                </div><br><br>
+
+                <button class="botcal" id="botcal" type="submit">Calcular IMC</button><br><br>
+
+        <script>
+            function calculareexibirIMC() {
+            var inputpeso = parseFloat(document.getElementById("peso").value)
+            var inputalt = parseFloat(document.getElementById("altura").value)
+            var imc = (inputpeso / (inputalt * inputalt))
+            if (imc < 18.5) {
+                alert('Você está abaixo do peso.')
+            } 
+            else if (imc >= 18.5 && imc <= 24.9) {
+                alert('Você está no peso normal.')
+            }
+            else if (imc >= 25 && imc <= 29.9) {
+                alert('Você está em sobrepeso.')
+            } else {
+                alert('Estado de obesidade.')
+            }
+            }
+
+        var botao = document.getElementById("botcal")
+        botao.addEventListener('click', calculareexibirIMC) // antes da vírgula a ação, depois da vírgula a reação, que é a função criada
+        </script>
+
+
+
+    </center>
+</body>
+</html>
